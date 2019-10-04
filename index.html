@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NetWorth Homepage</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body style="background-color: #E5E5E5">
+
+
+    <div class="container" id="original" >
+            <div class="navbar fixed-top navbar-light bg-light" >
+                <div class="left"><a href="#"><img src="menu_icon.jpg" width="40" height="30" alt=""></a></div>
+                <a class="navbar-brand" href="#" id="navtitle">Networth Calculator</a>
+                <div class="right"><a href="splash.html"><img src="zeuslogo.png" width="75" height="45" alt=""></a></div>
+
+            </div>
+
+            <div class="after_nav">
+                <h3>Welcome</h3>
+               <!-- <h3>John</h3>-->
+			</div>
+                <div class="calculate">Calculate Networth</div>
+		</div>
+
+        <div align="center">
+                <form action="#" id="main" onsubmit="myFunction()">
+
+
+                    <br><br>
+
+                    <div class="form-group">
+                        <label class="input-label">Assets (&#8358;)</label>
+                        <input type="number" id="asst" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="input-label">Cash (&#8358;)</label>
+                        <input type="number" id="cash" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label  class="input-label">Liabilities (&#8358;)</label>
+                        <input type="number" id="liab" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="button" class="btn btn-primary" id="calc" onclick="myFunction()">CALCULATE</button>
+                    </div>
+
+                    <p id="net" style="margin-top: 20px;">Your networth is  </p>
+
+                    <a href="" class="total">&#8358;<span class="total" id="total"></span></a>
+
+                </form>
+            </div>
+	</div>
+    <script type="text/javascript">
+        function myFunction(){
+          var asst= parseInt(document.getElementById("asst").value);
+          var cash= parseInt(document.getElementById("cash").value);
+          var liab= parseInt(document.getElementById("liab").value);
+          if(asst && cash && liab){
+              var networth= (asst + cash) - liab;
+              document.getElementById("total").innerHTML=networth;
+          }
+		  }
+        
+		
+    </script>
+
+</body>
+</html>
